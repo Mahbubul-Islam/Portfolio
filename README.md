@@ -35,7 +35,7 @@ A modern, responsive portfolio website showcasing my skills and projects with gl
 
 ## 🚀 Live Demo
 
-[View Live Portfolio] (https://chic-pasca-fb2991.netlify.app/)
+[View Live Portfolio](https://chic-pasca-fb2991.netlify.app/)
 
 ## 📁 Project Structure
 
