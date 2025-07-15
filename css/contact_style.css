@@ -1,0 +1,469 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color: #bdd1d6;
+  --font-family: 'Baloo Bhai 2', sans-serif;
+  --input-gradient: linear-gradient(
+    135deg,
+    rgba(189, 209, 214, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  --border-gradient: linear-gradient(135deg, #bdd1d6, #ffffff, #bdd1d6);
+  --shadow-primary: 0 15px 35px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 20px 40px rgba(189, 209, 214, 0.3);
+}
+
+.contact {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(189, 209, 214, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.contact-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.contact-text h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--color);
+  font-family: var(--font-family);
+  background: var(--border-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--color);
+  font-family: var(--font-family);
+  opacity: 0.9;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 500px;
+  background: rgba(189, 209, 214, 0.08);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: var(--shadow-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+  background: var(--border-gradient);
+  border-radius: 20px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.contact-form:hover::before {
+  opacity: 1;
+}
+
+.contact-form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.contact-form:hover::after {
+  left: 100%;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: var(--color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 500;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 4;
+  opacity: 0.7;
+}
+
+/* Specific label styling for textarea */
+.input-group textarea + label {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  transform: translateY(0);
+  color: var(--color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 500;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 4;
+  opacity: 0.7;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 18px 20px;
+  background: var(--input-gradient);
+  border: 2px solid rgba(189, 209, 214, 0.3);
+  border-radius: 15px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  color: var(--color);
+  outline: none;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 3;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: rgba(189, 209, 214, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(189, 209, 214, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Float label on focus or when input has valid content */
+.input-group:focus-within label,
+.input-group input:valid + label,
+.input-group textarea:valid + label {
+  top: -8px;
+  left: 15px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: rgba(189, 209, 214, 0.9);
+  padding: 5px 10px;
+  border-radius: 8px;
+  transform: translateY(0);
+  opacity: 1;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: var(--font-family);
+  padding-top: 18px;
+}
+
+/* Override default label positioning for textarea only */
+.input-group textarea + label {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  transform: translateY(0);
+  color: var(--color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 500;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 4;
+  opacity: 0.7;
+}
+
+/* Focused/filled state for textarea label using focus-within and valid */
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  position: absolute;
+  top: -8px;
+  left: 15px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: rgba(189, 209, 214, 0.9);
+  padding: 5px 10px;
+  border-radius: 8px;
+  transform: translateY(0);
+  opacity: 1;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  background: rgba(189, 209, 214, 0.2);
+  border: 2px solid rgba(189, 209, 214, 0.6);
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  z-index: 3;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--border-gradient);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.submit-btn::after {
+  content: '\f1d8';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  color: #1a1a2e;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: var(--hover-shadow);
+  text-shadow: none;
+}
+
+.submit-btn:hover::before {
+  left: 0;
+}
+
+.submit-btn:hover::after {
+  transform: translateX(5px);
+}
+
+.submit-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .contact {
+    padding: 80px 5%;
+    gap: 50px;
+  }
+
+  .contact-text h3 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    padding: 60px 5%;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .contact-text {
+    max-width: 100%;
+  }
+
+  .contact-text h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .contact-form {
+    padding: 30px;
+    max-width: 100%;
+    border-radius: 18px;
+  }
+
+  .input-group {
+    margin-bottom: 25px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    padding: 16px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 40px 3%;
+    gap: 30px;
+  }
+
+  .contact-text h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .contact-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .contact-form {
+    padding: 25px;
+    border-radius: 15px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
+
+  .input-group label {
+    font-size: 0.9rem;
+  }
+
+  .input-group textarea + label {
+    top: 30px;
+  }
+
+  .submit-btn {
+    padding: 14px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .contact {
+    padding: 30px 2%;
+    gap: 25px;
+  }
+
+  .contact-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .contact-text p {
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .input-group {
+    margin-bottom: 18px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+
+  .input-group label {
+    font-size: 0.85rem;
+  }
+
+  .input-group textarea + label {
+    top: 28px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+}
