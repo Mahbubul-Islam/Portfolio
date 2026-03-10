@@ -35,7 +35,7 @@ A modern, responsive portfolio website showcasing my skills and projects with gl
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://your-username.github.io/portfolio-website)
+[View Live Portfolio](https://chic-pasca-fb2991.netlify.app/)
 
 ## 📁 Project Structure
 
@@ -97,7 +97,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Mahbubul Islam**
 
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: [](https://github.com/your-username)
 - LinkedIn: [Your Profile](https://linkedin.com/in/your-profile)
 - Email: mahbubulislamshiam48@gmail.com
 
