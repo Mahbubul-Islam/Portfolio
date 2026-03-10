@@ -1,0 +1,288 @@
+.publications {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 5%;
+}
+
+.publications h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Baloo Bhai 2', sans-serif;
+  background: linear-gradient(135deg, #bdd1d6, #ffffff, #bdd1d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.publications-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Card ─────────────────────────────────────────── */
+.publication-card {
+  position: relative;
+  background: rgba(189, 209, 214, 0.05);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 32px 36px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  overflow: hidden;
+}
+
+.publication-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(189, 209, 214, 0.4),
+    transparent 60%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.publication-card:hover::before {
+  opacity: 1;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(189, 209, 214, 0.12);
+  border-color: rgba(189, 209, 214, 0.3);
+}
+
+/* ── Card header ──────────────────────────────────── */
+.pub-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.pub-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(189, 209, 214, 0.12);
+  border: 1px solid rgba(189, 209, 214, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #bdd1d6;
+  margin-top: 2px;
+}
+
+.pub-meta {
+  flex: 1;
+}
+
+.pub-meta h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Baloo Bhai 2', sans-serif;
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.pub-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(189, 209, 214, 0.75);
+}
+
+.pub-details span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pub-details i {
+  font-size: 0.8rem;
+  color: #bdd1d6;
+}
+
+/* ── Abstract ─────────────────────────────────────── */
+.pub-abstract {
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(189, 209, 214, 0.85);
+  margin-bottom: 20px;
+  border-left: 3px solid rgba(189, 209, 214, 0.3);
+  padding-left: 16px;
+}
+
+/* ── Tags ─────────────────────────────────────────── */
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.pub-tags span {
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #bdd1d6;
+  background: rgba(189, 209, 214, 0.1);
+  border: 1px solid rgba(189, 209, 214, 0.25);
+  border-radius: 20px;
+  padding: 4px 12px;
+  letter-spacing: 0.4px;
+}
+
+/* ── Footer row ───────────────────────────────────── */
+.pub-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pub-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(189, 209, 214, 0.7);
+}
+
+.pub-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+  animation: pubPulse 2s ease-in-out infinite;
+}
+
+@keyframes pubPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #bdd1d6;
+  text-decoration: none;
+  background: rgba(189, 209, 214, 0.1);
+  border: 1px solid rgba(189, 209, 214, 0.35);
+  border-radius: 10px;
+  padding: 8px 18px;
+  transition: all 0.3s ease;
+}
+
+.pub-link:hover {
+  background: rgba(189, 209, 214, 0.22);
+  border-color: rgba(189, 209, 214, 0.7);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(189, 209, 214, 0.2);
+}
+
+.pub-link i {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.pub-link:hover i {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .publications {
+    padding: 60px 5%;
+  }
+
+  .publications h2 {
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+  }
+
+  .publication-card {
+    padding: 24px 20px;
+  }
+
+  .pub-header {
+    gap: 14px;
+  }
+
+  .pub-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .pub-meta h3 {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .publications {
+    padding: 40px 4%;
+  }
+
+  .publications h2 {
+    font-size: 1.9rem;
+    margin-bottom: 28px;
+  }
+
+  .publication-card {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .pub-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pub-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pub-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

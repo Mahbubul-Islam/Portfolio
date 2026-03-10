@@ -72,6 +72,51 @@ html {
   opacity: 0.9;
 }
 
+.contact-details {
+  margin-top: 30px;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(189, 209, 214, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-detail-item:hover {
+  background: rgba(189, 209, 214, 0.12);
+  transform: translateX(5px);
+}
+
+.contact-detail-item i {
+  color: var(--color);
+  font-size: 1.2rem;
+  margin-top: 4px;
+  width: 24px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.contact-detail-item strong {
+  color: #ffffff;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.contact-detail-item p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.8;
+}
+
 .contact-form {
   flex: 1;
   max-width: 500px;

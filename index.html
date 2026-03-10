@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="/css/nav_style.css" />
     <link rel="stylesheet" href="/css/hero_style.css" />
     <link rel="stylesheet" href="/css/skill_style.css" />
+    <link rel="stylesheet" href="/css/resume_style.css" />
+    <link rel="stylesheet" href="/css/publications_style.css" />
     <link rel="stylesheet" href="/css/projects_style.css" />
     <link rel="stylesheet" href="/css/contact_style.css" />
+    <link rel="stylesheet" href="/css/video_style.css" />
     <link rel="stylesheet" href="/css/footer_style.css" />
+    <link rel="stylesheet" href="/css/scroll_animation.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,7 +42,18 @@
           </a>
         </div>
 
-        <div class="left-div">
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="left-div" id="nav-menu">
           <ul>
             <li>
               <a href="#skills">
@@ -47,9 +62,28 @@
               </a>
             </li>
             <li>
+              <a href="#resume">
+                <i class="fa-solid fa-file-lines"></i>
+                Resume
+              </a>
+            </li>
+            
+            <li>
               <a href="#projects">
                 <i class="fa-solid fa-bars-progress"></i>
                 Projects
+              </a>
+            </li>
+            <li>
+              <a href="#publications">
+                <i class="fa-solid fa-book-open"></i>
+                Publications
+              </a>
+            </li>
+            <li>
+              <a href="#video">
+                <i class="fa-solid fa-video"></i>
+                Video
               </a>
             </li>
             <li>
@@ -65,20 +99,29 @@
     <section class="hero">
       <div class="hero-text">
         <h2>Hi, I'm <span class="bold">Mahbubul Islam</span></h2>
-        <h3>Wellcome to my portfolio</h3>
+        <h3>
+          <span class="static-text">I'm a </span>
+          <span class="rotating-text-wrapper">
+            <span class="rotating-text">
+              <span>Full Stack Developer</span>
+              <span>Deep Learning Researcher</span>
+              <span>Django Developer</span>
+              <span>React Developer</span>
+              <span>Software Engineer</span>
+            </span>
+          </span>
+        </h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aut
-          tenetur voluptatem aspernatur minus aliquid suscipit deleniti odit
-          eaque facilis dolore soluta blanditiis fugiat nisi, iusto ipsam.
-          Doloremque aut possimus iusto optio architecto porro quibusdam illum
-          dolore incidunt veritatis quae earum dignissimos, deleniti fugit
-          laudantium? Veniam incidunt ducimus nemo, fugit odit perferendis
-          voluptatum at delectus exercitationem tempore velit itaque error
-          blanditiis est, nam doloribus cumque. Ipsum quaerat minima amet
-          quibusdam sed illo suscipit, obcaecati earum in laudantium aliquid
-          repellat nostrum aperiam dolorum possimus eos accusamus animi vel
-          voluptas magni sapiente doloribus labore nulla? Dolorem aspernatur
-          explicabo fuga, alias veniam illo.
+          I am a passionate software engineer and deep learning researcher based
+          in Dhaka, Bangladesh, with a strong academic foundation in Computer
+          Science and hands-on experience in full-stack web development.
+          Throughout my career, I have built modern, responsive web applications
+          using technologies like Python, Django, React, Next.js, and NestJS,
+          while also conducting research in deep learning — exploring neural
+          network architectures and computer vision. I am dedicated to writing
+          clean, maintainable code and continuously expanding my skill set. My
+          journey in tech has been driven by curiosity, creativity, and a
+          commitment to delivering impactful solutions.
         </p>
         <div class="links">
           <ul>
@@ -99,11 +142,35 @@
       </div>
       <div class="profile-pic">
         <img src="/assets/profile.jpg" alt="profile-pic" />
+        <div class="orbit-icon icon-1">
+          <img src="/assets/html.png" alt="HTML" />
+        </div>
+        <div class="orbit-icon icon-2">
+          <img src="/assets/css.png" alt="CSS" />
+        </div>
+        <div class="orbit-icon icon-3">
+          <img src="/assets/python.png" alt="Python" />
+        </div>
+        <div class="orbit-icon icon-4">
+          <img src="/assets/django.png" alt="Django" />
+        </div>
+        <div class="orbit-icon icon-5">
+          <img src="/assets/react.png" alt="React" />
+        </div>
+        <div class="orbit-icon icon-6">
+          <img src="/assets/nextjs.svg" alt="Next.js" />
+        </div>
+        <div class="orbit-icon icon-7">
+          <img src="/assets/tailwind.png" alt="Tailwind" />
+        </div>
+        <div class="orbit-icon icon-8">
+          <img src="/assets/nestjs.svg" alt="NestJS" />
+        </div>
       </div>
     </section>
     <section id="skills" class="skills">
-      <h2>Skills</h2>
-      <ul>
+      <h2 data-animate="fade-up">Skills</h2>
+      <ul data-animate="fade-in" data-delay="200">
         <li>
           <img src="/assets/html.png" alt="html" />
           <p>HTML</p>
@@ -137,8 +204,12 @@
           <p>React js</p>
         </li>
         <li>
-          <img src="/assets/vuejs.png" alt="vue" />
-          <p>Vue js</p>
+          <img src="/assets/nextjs.svg" alt="nextjs" />
+          <p>Next.js</p>
+        </li>
+        <li>
+          <img src="/assets/nestjs.svg" alt="nestjs" />
+          <p>NestJS</p>
         </li>
         <!-- Duplicate items for seamless infinite scroll -->
         <li>
@@ -174,83 +245,384 @@
           <p>React js</p>
         </li>
         <li>
-          <img src="/assets/vuejs.png" alt="vue" />
-          <p>Vue js</p>
+          <img src="/assets/nextjs.svg" alt="nextjs" />
+          <p>Next.js</p>
+        </li>
+        <li>
+          <img src="/assets/nestjs.svg" alt="nestjs" />
+          <p>NestJS</p>
         </li>
       </ul>
     </section>
-    <section id="projects" class="projects">
-      <h2>My Projects</h2>
-      <div class="project project-1">
-        <h3>Project Name</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident
-          vitae rerum consectetur rem voluptatem saepe reiciendis porro eius
-          eveniet, eligendi aperiam quia esse sed, illum eos tenetur mollitia.
-          Facilis quam repudiandae ex doloremque fuga vitae iste, molestiae
-          recusandae qui eum reprehenderit sequi facere quisquam ab dignissimos
-          consequuntur corporis dolores. Voluptatem?
-        </p>
-        <button>Open</button>
-      </div>
-      <div class="project project-2">
-        <h3>Project Name</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident
-          vitae rerum consectetur rem voluptatem saepe reiciendis porro eius
-          eveniet, eligendi aperiam quia esse sed, illum eos tenetur mollitia.
-          Facilis quam repudiandae ex doloremque fuga vitae iste, molestiae
-          recusandae qui eum reprehenderit sequi facere quisquam ab dignissimos
-          consequuntur corporis dolores. Voluptatem?
-        </p>
-        <button>Open</button>
-      </div>
-      <div class="project project-3">
-        <h3>Project Name</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident
-          vitae rerum consectetur rem voluptatem saepe reiciendis porro eius
-          eveniet, eligendi aperiam quia esse sed, illum eos tenetur mollitia.
-          Facilis quam repudiandae ex doloremque fuga vitae iste, molestiae
-          recusandae qui eum reprehenderit sequi facere quisquam ab dignissimos
-          consequuntur corporis dolores. Voluptatem?
-        </p>
-        <button>Open</button>
-      </div>
-      <div class="project project-4">
-        <h3>Project Name</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident
-          vitae rerum consectetur rem voluptatem saepe reiciendis porro eius
-          eveniet, eligendi aperiam quia esse sed, illum eos tenetur mollitia.
-          Facilis quam repudiandae ex doloremque fuga vitae iste, molestiae
-          recusandae qui eum reprehenderit sequi facere quisquam ab dignissimos
-          consequuntur corporis dolores. Voluptatem?
-        </p>
-        <button>Open</button>
-      </div>
-      <div class="project project-5">
-        <h3>Project Name</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident
-          vitae rerum consectetur rem voluptatem saepe reiciendis porro eius
-          eveniet, eligendi aperiam quia esse sed, illum eos tenetur mollitia.
-          Facilis quam repudiandae ex doloremque fuga vitae iste, molestiae
-          recusandae qui eum reprehenderit sequi facere quisquam ab dignissimos
-          consequuntur corporis dolores. Voluptatem?
-        </p>
-        <button>Open</button>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+      <h2 data-animate="fade-up">Resume</h2>
+      <div class="resume-container">
+        <div class="resume-left" data-animate="fade-left">
+          <div class="resume-block">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+            <div class="resume-item">
+              <span class="resume-date">2022 &ndash; Present</span>
+              <h4>B.Sc. in Computer Science &amp; Engineering</h4>
+              <p>American International University Bangladesh (AIUB), Dhaka</p>
+              <p>CGPA: 3.89 / 4.00 (Current)</p>
+            </div>
+            <div class="resume-item">
+              <span class="resume-date">2021</span>
+              <h4>Higher Secondary Certificate (HSC)</h4>
+              <p>Holly Land College, Dinajpur</p>
+              <p>Dinajpur Board &mdash; GPA 5.00 / 5.00</p>
+            </div>
+            <div class="resume-item">
+              <span class="resume-date">2019</span>
+              <h4>Secondary School Certificate (SSC)</h4>
+              <p>Kurigram Govt High School</p>
+              <p>Dinajpur Board &mdash; GPA 5.00 / 5.00</p>
+            </div>
+          </div>
+        </div>
+        <div class="resume-right" data-animate="fade-right" data-delay="200">
+          <div class="resume-block">
+            <h3><i class="fa-solid fa-list-check"></i> Relevant Courses</h3>
+            <ul class="courses-list">
+              <li>Data Structures &amp; Algorithms</li>
+              <li>Object-Oriented Programming</li>
+              <li>Database Management Systems</li>
+              <li>Software Engineering Principles</li>
+              <li>Web Application Development</li>
+              <li>Computer Networks &amp; Security</li>
+              <li>Operating Systems</li>
+              <li>
+                Advanced Web Technology
+                <span style="font-size: 0.78em; opacity: 0.65">(Academic)</span>
+              </li>
+              <li>
+                Full Stack Web Development with Python, Django &amp; React
+                <span style="font-size: 0.78em; opacity: 0.65">(Ostad)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="resume-block">
+            <h3><i class="fa-solid fa-star"></i> Technical Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-tag">Python</div>
+              <div class="skill-tag">Django</div>
+              <div class="skill-tag">JavaScript</div>
+              <div class="skill-tag">React.js</div>
+              <div class="skill-tag">Next.js</div>
+              <div class="skill-tag">NestJS</div>
+              <div class="skill-tag">HTML &amp; CSS</div>
+              <div class="skill-tag">Tailwind CSS</div>
+              <div class="skill-tag">C++</div>
+              <div class="skill-tag">C#</div>
+              <div class="skill-tag">SQL / PostgreSQL</div>
+              <div class="skill-tag">Git &amp; GitHub</div>
+              <div class="skill-tag">REST APIs</div>
+              <div class="skill-tag">Linux</div>
+              <div class="skill-tag">Docker</div>
+              <div class="skill-tag">Deep Learning</div>
+              <div class="skill-tag">TensorFlow</div>
+              <div class="skill-tag">PyTorch</div>
+            </div>
+          </div>
+          <div class="resume-block">
+            <h3><i class="fa-solid fa-download"></i> Download</h3>
+            <a
+              href="/assets/resume.pdf"
+              download="resume.pdf"
+              class="download-btn"
+              >Download Resume (PDF)</a
+            >
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <h2 data-animate="fade-up">Sample Projects</h2>
+      <div class="projects-grid">
+        <div class="project project-1" data-animate="fade-up">
+          <div class="project-image">
+            <img
+              src="https://www.freevector.com/uploads/vector/preview/62843/vecteezystudentsillustrationik0122_generated.jpg"
+              alt="LMS Project Preview"
+            />
+          </div>
+          <h3>Learning Management System (LMS)</h3>
+          <p>
+            A Django REST API backend for a Learning Management System with
+            role-based permission controls. Features include lesson and material
+            management, user authentication, and structured course content
+            delivery via clean REST API endpoints.
+          </p>
+          <div class="project-tags">
+            <span>Django</span><span>Python</span><span>REST API</span
+            ><span>SQLite</span>
+          </div>
+          <a
+            href="https://github.com/Mahbubul-Islam/LMS-project"
+            target="_blank"
+            class="project-btn"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="project project-2" data-animate="fade-up" data-delay="150">
+          <div class="project-image">
+            <img
+              src="https://www.freevector.com/uploads/vector/preview/99712/DESIGN_TEAM3.jpg"
+              alt="Student Team Finder Preview"
+            />
+          </div>
+          <h3>Student Team Finder</h3>
+          <p>
+            A platform that helps university students discover and connect with
+            potential project teammates. Students can post project ideas, browse
+            open teams, and collaborate based on skill sets and interests —
+            streamlining the team formation process for academic projects.
+          </p>
+          <div class="project-tags">
+            <span>Django</span><span>Python</span><span>SQLite</span>
+          </div>
+          <a
+            href="https://github.com/Mahbubul-Islam/student-team-finder"
+            target="_blank"
+            class="project-btn"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="project project-3" data-animate="fade-up" data-delay="300">
+          <div class="project-image">
+            <img
+              src="https://www.freevector.com/uploads/vector/preview/58146/vecteezylibrarian-character-focused-illustration-rk0821_generated.jpg"
+              alt="Online Library Preview"
+            />
+          </div>
+          <h3>Online Library &amp; Book Review System</h3>
+          <p>
+            A modern, responsive Django web application for browsing books and
+            writing reviews. Features user authentication, admin book
+            management, star ratings, search and category filtering, pagination
+            with a 3&times;2 grid layout, and a clean Tailwind CSS design.
+          </p>
+          <div class="project-tags">
+            <span>Django</span><span>Python</span><span>Tailwind CSS</span
+            ><span>SQLite</span>
+          </div>
+          <a
+            href="https://github.com/Mahbubul-Islam/Online-Library-Book-Review-System-"
+            target="_blank"
+            class="project-btn"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="project project-4" data-animate="fade-up" data-delay="450">
+          <div class="project-image">
+            <img
+              src="https://www.freevector.com/uploads/vector/preview/103584/School_Bus.jpg"
+              alt="AIUB Shuttle Management Preview"
+            />
+          </div>
+          <h3>AIUB Shuttle Management System</h3>
+          <p>
+            A comprehensive desktop application for managing shuttle
+            transportation services at AIUB. Built with C# Windows Forms and SQL
+            Server, it supports multi-role authentication (Student, Faculty,
+            Staff, Admin), real-time seat booking, schedule &amp; route
+            management, and an integrated notification system.
+          </p>
+          <div class="project-tags">
+            <span>C#</span><span>.NET Framework</span><span>SQL Server</span
+            ><span>Windows Forms</span>
+          </div>
+          <a
+            href="https://github.com/Mahbubul-Islam/AIUB_SHUTTLE_MANAGEMENT_SYSTEM"
+            target="_blank"
+            class="project-btn"
+            >View on GitHub</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+      <h2 data-animate="fade-up">Publications</h2>
+      <div class="publications-grid">
+        <!-- Publication 1 -->
+        <div class="publication-card" data-animate="fade-up">
+          <div class="pub-header">
+            
+            <div class="pub-meta">
+              <h3>
+                A Deep Learning-Based Framework for Accurate Detection and
+                Classification of On-Road Vehicles Using Improved YOLOv11
+              </h3>
+              <div class="pub-details">
+                <span
+                  ><i class="fa-solid fa-users"></i> Mahbubul Islam et al.</span
+                >
+                <span><i class="fa-solid fa-calendar"></i> 2025</span>
+                <span
+                  ><i class="fa-solid fa-tag"></i> Computer Vision &middot;
+                  Object Detection</span
+                >
+              </div>
+            </div>
+          </div>
+          <p class="pub-abstract">
+            This paper presents an improved YOLOv11-based deep learning
+            framework for accurate real-time detection and multi-class
+            classification of on-road vehicles. The proposed approach enhances
+            detection performance across varied lighting, occlusion, and traffic
+            density conditions, contributing to intelligent transportation
+            systems and autonomous driving research.
+          </p>
+          <div class="pub-tags">
+            <span>Deep Learning</span>
+            <span>YOLOv11</span>
+            <span>Object Detection</span>
+            <span>Computer Vision</span>
+            <span>Autonomous Driving</span>
+            <span>Python</span>
+          </div>
+          <div class="pub-footer">
+            <div class="pub-status">
+              <span class="pub-dot"></span>
+              Published &middot; ResearchGate
+            </div>
+            <a
+              href="https://www.researchgate.net/publication/392226563_A_Deep_Learning-Based_Framework_for_Accurate_Detection_and_Classification_of_On-Road_Vehicles_Using_Improved_YOLOv11"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pub-link"
+            >
+              Read Paper <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="publication-card" data-animate="fade-up" data-delay="150">
+          <div class="pub-header">
+            
+            <div class="pub-meta">
+              <h3>
+                Deep Learning Based Real-Time Hand Detection Using First-Person
+                Egocentric Perspectives
+              </h3>
+              <div class="pub-details">
+                <span
+                  ><i class="fa-solid fa-users"></i> Mahbubul Islam et al.</span
+                >
+                <span><i class="fa-solid fa-calendar"></i> 2025</span>
+                <span
+                  ><i class="fa-solid fa-tag"></i> Computer Vision &middot; Hand
+                  Detection</span
+                >
+              </div>
+            </div>
+          </div>
+          <p class="pub-abstract">
+            This research proposes a real-time hand detection system leveraging
+            deep learning techniques on first-person egocentric video streams.
+            By addressing challenges unique to egocentric perspectives such as
+            partial occlusion and varied hand poses, the framework achieves
+            robust detection suitable for human-computer interaction and
+            augmented reality applications.
+          </p>
+          <div class="pub-tags">
+            <span>Deep Learning</span>
+            <span>Hand Detection</span>
+            <span>Egocentric Vision</span>
+            <span>Computer Vision</span>
+            <span>HCI</span>
+            <span>Real-Time</span>
+          </div>
+          <div class="pub-footer">
+            <div class="pub-status">
+              <span class="pub-dot"></span>
+              Published &middot; ResearchGate
+            </div>
+            <a
+              href="https://www.researchgate.net/publication/399471843_Deep_Learning_Based_Real-Time_Hand_Detection_Using_First-Person_Egocentric_Perspectives"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pub-link"
+            >
+              Read Paper <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Video Section -->
+    <section id="video" class="video-section">
+      <h2 data-animate="fade-up">About Me &ndash; Video Introduction</h2>
+      <div class="video-container">
+        <div class="video-wrapper" data-animate="fade-left">
+          <!-- Replace the src below with your actual video URL (YouTube embed, or local .mp4) -->
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Video introduction about Mahbubul Islam"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div
+          class="video-description"
+          data-animate="fade-right"
+          data-delay="150"
+        >
+          <h3>Get to Know Me</h3>
+          <p>
+            In this short video I share my background, what drives me as a
+            developer, the technologies I enjoy working with, and the kind of
+            projects I'm passionate about. Watch to learn more about my journey
+            in software engineering!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
     <div id="contact" class="contact">
-      <div class="contact-text">
+      <div class="contact-text" data-animate="fade-left">
         <h3>Contact</h3>
         <p>
-          Have a project in mind or just want to say hi? I'd love hear from you.
-          Feel free to reach out through the form.
+          Have a project in mind or just want to say hi? I'd love to hear from
+          you. Feel free to reach out through the form or use the contact
+          details below.
         </p>
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <p>+880 177 459-3370</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>mahbubulislamshiam48@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Address</strong>
+              <p>Dhaka City, Bangladesh</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="contact-form">
+      <div class="contact-form" data-animate="fade-right" data-delay="150">
         <div class="input-group">
           <input type="text" id="name" name="name" required />
           <label for="name">Your Name</label>
@@ -268,7 +640,7 @@
     </div>
     <footer>
       <div class="footer-content">
-        <div class="footer-section">
+        <div class="footer-section" data-animate="fade-up">
           <div class="footer-logo">
             <h3>Mahbubul Islam</h3>
           </div>
@@ -292,26 +664,30 @@
           </div>
         </div>
 
-        <div class="footer-section">
+        <div class="footer-section" data-animate="fade-up" data-delay="100">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#publications">Publications</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#video">Video</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
 
-        <div class="footer-section">
+        <div class="footer-section" data-animate="fade-up" data-delay="200">
           <h4>Technologies</h4>
           <ul>
             <li>HTML & CSS</li>
             <li>JavaScript</li>
             <li>Python & Django</li>
-            <li>React & Vue</li>
+            <li>React & Next.js</li>
+            <li>NestJS</li>
           </ul>
         </div>
 
-        <div class="footer-section">
+        <div class="footer-section" data-animate="fade-up" data-delay="300">
           <h4>Contact Info</h4>
           <div class="contact-info">
             <p>
@@ -336,5 +712,134 @@
         </div>
       </div>
     </footer>
+
+    <!-- Custom futuristic cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <style>
+      * {
+        cursor: none !important;
+      }
+
+      #cursor-dot {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: #bdd1d6;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.08s ease, background 0.2s ease, width 0.2s ease,
+          height 0.2s ease;
+        box-shadow: 0 0 8px rgba(189, 209, 214, 0.9),
+          0 0 18px rgba(189, 209, 214, 0.5);
+      }
+
+      #cursor-ring {
+        position: fixed;
+        width: 36px;
+        height: 36px;
+        border: 1.5px solid rgba(189, 209, 214, 0.7);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+        box-shadow: 0 0 10px rgba(189, 209, 214, 0.25);
+      }
+
+      body.cursor-hover #cursor-dot {
+        width: 12px;
+        height: 12px;
+        background: #ffffff;
+        box-shadow: 0 0 14px rgba(255, 255, 255, 0.95),
+          0 0 30px rgba(189, 209, 214, 0.6);
+      }
+
+      body.cursor-hover #cursor-ring {
+        width: 52px;
+        height: 52px;
+        border-color: rgba(255, 255, 255, 0.6);
+      }
+    </style>
+
+    <script>
+      const dot = document.getElementById('cursor-dot')
+      const ring = document.getElementById('cursor-ring')
+      let ringX = 0,
+        ringY = 0,
+        mouseX = 0,
+        mouseY = 0
+
+      document.addEventListener('mousemove', e => {
+        mouseX = e.clientX
+        mouseY = e.clientY
+        dot.style.left = mouseX + 'px'
+        dot.style.top = mouseY + 'px'
+      })
+      ;(function animateRing() {
+        ringX += (mouseX - ringX) * 0.12
+        ringY += (mouseY - ringY) * 0.12
+        ring.style.left = ringX + 'px'
+        ring.style.top = ringY + 'px'
+        requestAnimationFrame(animateRing)
+      })()
+
+      document
+        .querySelectorAll('a, button, .project-btn, .nav-content a, .links li')
+        .forEach(el => {
+          el.addEventListener('mouseenter', () =>
+            document.body.classList.add('cursor-hover')
+          )
+          el.addEventListener('mouseleave', () =>
+            document.body.classList.remove('cursor-hover')
+          )
+        })
+    </script>
+
+    <script>
+      // Scroll animation — IntersectionObserver
+      const scrollObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const delay = parseInt(entry.target.dataset.delay || 0)
+              setTimeout(() => {
+                entry.target.classList.add('is-visible')
+              }, delay)
+              scrollObserver.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      )
+      document
+        .querySelectorAll('[data-animate]')
+        .forEach(el => scrollObserver.observe(el))
+    </script>
+
+    <script>
+      // Hamburger menu toggle
+      const hamburger = document.getElementById('hamburger')
+      const navMenu = document.getElementById('nav-menu')
+      const navEl = document.querySelector('nav')
+
+      hamburger.addEventListener('click', () => {
+        const isOpen = navEl.classList.toggle('nav-open')
+        hamburger.classList.toggle('is-open', isOpen)
+        hamburger.setAttribute('aria-expanded', isOpen)
+      })
+
+      // Close menu when any nav link is clicked
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navEl.classList.remove('nav-open')
+          hamburger.classList.remove('is-open')
+          hamburger.setAttribute('aria-expanded', 'false')
+        })
+      })
+    </script>
   </body>
 </html>
