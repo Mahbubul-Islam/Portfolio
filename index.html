@@ -6,7 +6,7 @@
     <title>My portfolio</title>
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>"
     />
     <link rel="stylesheet" href="/css/nav_style.css" />
     <link rel="stylesheet" href="/css/hero_style.css" />
@@ -131,7 +131,7 @@
             </li>
             <li>
               <i class="fa-brands fa-facebook"></i>
-              <a href="#">Facebook</a>
+              <a href="https://www.facebook.com/mahbubulislam.shiam.79">Facebook</a>
             </li>
             <li>
               <i class="fa-brands fa-linkedin"></i>
@@ -141,31 +141,8 @@
         </div>
       </div>
       <div class="profile-pic">
-        <img src="/assets/profile.jpg" alt="profile-pic" />
-        <div class="orbit-icon icon-1">
-          <img src="/assets/html.png" alt="HTML" />
-        </div>
-        <div class="orbit-icon icon-2">
-          <img src="/assets/css.png" alt="CSS" />
-        </div>
-        <div class="orbit-icon icon-3">
-          <img src="/assets/python.png" alt="Python" />
-        </div>
-        <div class="orbit-icon icon-4">
-          <img src="/assets/django.png" alt="Django" />
-        </div>
-        <div class="orbit-icon icon-5">
-          <img src="/assets/react.png" alt="React" />
-        </div>
-        <div class="orbit-icon icon-6">
-          <img src="/assets/nextjs.svg" alt="Next.js" />
-        </div>
-        <div class="orbit-icon icon-7">
-          <img src="/assets/tailwind.png" alt="Tailwind" />
-        </div>
-        <div class="orbit-icon icon-8">
-          <img src="/assets/nestjs.svg" alt="NestJS" />
-        </div>
+        <img src="/assets/dp.jpeg" alt="profile-pic" />
+
       </div>
     </section>
     <section id="skills" class="skills">
@@ -564,14 +541,12 @@
       <h2 data-animate="fade-up">About Me &ndash; Video Introduction</h2>
       <div class="video-container">
         <div class="video-wrapper" data-animate="fade-left">
-          <!-- Replace the src below with your actual video URL (YouTube embed, or local .mp4) -->
-          <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Video introduction about Mahbubul Islam"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <div class="video-thumbnail" onclick="this.innerHTML='<iframe src=&quot;https://www.youtube.com/embed/W20PhyiUTUQ?autoplay=1&quot; title=&quot;Video introduction about Mahbubul Islam&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen></iframe>';this.classList.add('playing')">
+            <img src="assets/image.png" alt="Video thumbnail" />
+            <div class="play-btn">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
         </div>
         <div
           class="video-description"
@@ -652,7 +627,7 @@
             <a href="https://github.com/Mahbubul-Islam" aria-label="GitHub">
               <i class="fa-brands fa-github"></i>
             </a>
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/mahbubulislam.shiam.79" aria-label="Facebook">
               <i class="fa-brands fa-facebook"></i>
             </a>
             <a href="https://www.linkedin.com/in/mahbubul-islam-8b7341253/" aria-label="LinkedIn">
